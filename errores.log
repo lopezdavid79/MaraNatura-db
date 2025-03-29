@@ -1,0 +1,9 @@
+2025-03-24 22:37:35,182 - ERROR - Error al actualizar el stock del producto 122: database is locked
+2025-03-24 22:37:35,182 - ERROR - Error al actualizar el stock del producto 122.
+2025-03-24 23:11:31,844 - ERROR - Error al actualizar el stock del producto 122: database is locked
+2025-03-25 09:48:35,786 - ERROR - Error de base de datos al actualizar el stock del producto 122: database is locked
+2025-03-25 10:15:28,706 - ERROR - Error de base de datos al actualizar el stock del producto 122: database is locked
+2025-03-25 14:59:17,725 - ERROR - Error al actualizar stock de productos en lote: Incorrect number of bindings supplied. The current statement uses 2, and there are 1 supplied.
+2025-03-25 20:26:40,482 - ERROR - Error al registrar venta: NOT NULL constraint failed: ventas.id_cliente
+2025-03-25 20:26:55,562 - ERROR - Error al registrar venta: NOT NULL constraint failed: ventas.id_cliente
+2025-03-25 20:36:07,686 - ERROR - Error al registrar venta: NOT NULL constraint failed: ventas.id_cliente
