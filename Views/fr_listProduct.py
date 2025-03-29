@@ -77,9 +77,12 @@ class ListProducto(wx.Frame, listmix.ListCtrlAutoWidthMixin):
             detalle = datos_producto["detalle"]
             stock = datos_producto["stock"]
             precio = datos_producto["precio"]
+        # Filtrar por nombre si se proporciona un término de búsqueda
+            if nombre_busqueda is None or nombre_busqueda.lower() in nombre.lower():
+                self.list_ctrl.Append((nombre, id_producto, stock, precio))
 
             # Aquí puedes agregar los productos a self.list_ctrl
-            self.list_ctrl.Append((nombre, id_producto, stock, precio))
+#            self.list_ctrl.Append((nombre, id_producto, stock, precio))
 
 #mostrar el detalle del producto
     def mostrar_detalle_producto(self, event):

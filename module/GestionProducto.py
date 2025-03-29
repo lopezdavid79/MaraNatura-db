@@ -99,7 +99,7 @@ class GestionProducto:
     def obtener_todos(self):
         """Recupera todos los productos de la base de datos."""
         try:
-            self.cursor.execute("SELECT id, nombre, detalle, stock, precio FROM productos")
+            self.cursor.execute("SELECT id, nombre, detalle, stock, precio FROM productos ORDER BY nombre COLLATE NOCASE")
             productos = {str(row[0]): {"nombre": row[1], "detalle": row[2], "stock": row[3], "precio": row[4]}
                         for row in self.cursor.fetchall()}
 

@@ -70,9 +70,9 @@ class ListaClientes(wx.Frame, listmix.ListCtrlAutoWidthMixin):
             nombre = datos_cliente.get("nombre", "")
             telefono = datos_cliente.get("telefono", "")
             direccion = datos_cliente.get("direccion", "")
-
-            # Aquí puedes agregar los clientes a self.list_ctrl
-            self.list_ctrl.Append((id_cliente, nombre, telefono, direccion))
+# Filtrar por nombre si se proporciona un término de búsqueda
+            if nombre_busqueda is None or nombre_busqueda.lower() in nombre.lower():
+                self.list_ctrl.Append((id_cliente, nombre, telefono, direccion))
 
 
     def mostrar_detalle_cliente(self, event):

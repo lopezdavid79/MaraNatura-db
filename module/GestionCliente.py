@@ -81,7 +81,7 @@ class GestionCliente:
     def obtener_todos(self):
         """Recupera todos los clientes de la base de datos."""
         try:
-            self.cursor.execute("SELECT id, nombre, direccion, telefono FROM clientes")
+            self.cursor.execute("SELECT id, nombre, direccion, telefono FROM clientes ORDER BY nombre COLLATE NOCASE")
             #pdb.set_trace()
             clientes = {str(row[0]): {"nombre": row[1], "direccion": row[2], "telefono": row[3]}
                         for row in self.cursor.fetchall()}
