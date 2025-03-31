@@ -214,3 +214,19 @@ class GestionProducto:
         except Exception as e:
             logging.error(f"Error inesperado al actualizar el stock del producto {id_producto}: {e}")
             return False
+
+    def obtener_productos_filtrados(self, filtro):
+        """Busca productos por nombre."""
+        try:
+            self.cursor.execute("""
+                SELECT id, nombre, stock, precio
+                FROM productos
+                WHERE LOWER(nombre) LIKE ?
+            """, (f"%{filtro.lower()}%",)) # Convertimos el filtro a minúsculas para la comparación
+            resultados = {}
+            for id_producto, nombre, stock, precio in self.cursor.fetchall():
+                resultados[id_producto] = {"nombre": nombre, "stock": stock, "precio": precio}
+            return resultados
+        except sqlite3.Error as e:
+            logging.error(f"Error al buscar productos: {e}")
+            return {}

@@ -291,8 +291,8 @@ class AgregarVentaDialog(wx.Dialog):
     def cargar_productos(self):
         self.list_productos.Clear()
         productos = gestion_producto.obtener_productos()  
-        print("Tipo de 'productos':", type(productos))  
-        print("Contenido de 'productos':", productos)  # Imprime el contenido completo
+        #print("Tipo de 'productos':", type(productos))  
+        #print("Contenido de 'productos':", productos)  # Imprime el contenido completo
         productos_dict = {}  # Se crea un diccionario vacío.
         
         if productos:
@@ -331,11 +331,28 @@ class AgregarVentaDialog(wx.Dialog):
                     continue
 
 
-    def filtrar_productos(self, event):
+    def filtrar_productos_noanda(self, event):
         filtro = self.txt_buscar_producto.GetValue()
         self.actualizar_lista_productos(filtro)
 
-#permite agregar un solo producto a la lista 
+    def filtrar_productos(self, event):
+        filtro = self.txt_buscar_producto.GetValue()
+        self.list_productos.Clear()
+        productos_filtrados = gestion_producto.obtener_productos_filtrados(filtro) # Esta función no existe, tendrías que crearla
+
+        if productos_filtrados:
+            for id_producto, producto in productos_filtrados.items():
+                try:
+                    self.list_productos.Append((
+                        str(producto['nombre']),
+                        str(id_producto),
+                        str(producto['stock']),
+                        str(producto['precio'])
+                    ))
+                except KeyError as e:
+                    print(f"Error al procesar producto {id_producto}: {e}")
+                    print(f"Datos del producto: {producto}")
+                    continue
     
     def eliminar_producto(self, event):
         seleccion = self.list_productos_seleccionados.GetSelection()
