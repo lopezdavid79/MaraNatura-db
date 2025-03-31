@@ -5,6 +5,7 @@ import datetime
 import re
 import wx
 import wx.lib.mixins.listctrl as listmix
+import wx.adv
 from module.eventos import EVT_ACTUALIZAR_PRODUCTOS, ActualizarProductosEvent  # Importar el evento
 from module.ReproductorSonido import ReproductorSonido
 from module.GestionCliente import GestionCliente
@@ -161,8 +162,15 @@ class AgregarVentaDialog(wx.Dialog):
         self.gestion_ventas=gestion_ventas
 
         
-        
-                # Cliente
+                # Fecha
+        fecha_sizer = wx.BoxSizer(wx.HORIZONTAL)
+        lbl_fecha_venta = wx.StaticText(panel, label="Fecha:")
+        self.date_picker_venta = wx.adv.DatePickerCtrl(panel, style=wx.adv.DP_DROPDOWN | wx.adv.DP_SHOWCENTURY)
+        fecha_sizer.Add(lbl_fecha_venta, flag=wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, border=5)
+        fecha_sizer.Add(self.date_picker_venta, flag=wx.EXPAND)
+        vbox.Add(fecha_sizer, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10)
+
+        # Cliente
         vbox.Add(wx.StaticText(panel, label="Cliente:"), flag=wx.LEFT | wx.TOP, border=10)
         self.txt_cliente = wx.SearchCtrl(panel, style=wx.TE_PROCESS_ENTER)
         vbox.Add(self.txt_cliente, flag=wx.EXPAND | wx.LEFT | wx.RIGHT, border=10)
@@ -170,7 +178,7 @@ class AgregarVentaDialog(wx.Dialog):
         self.lista_clientes = wx.ListBox(panel, style=wx.LB_SINGLE)
         vbox.Add(self.lista_clientes, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10, proportion=1)
         self.txt_cliente.Bind(wx.EVT_TEXT, self.filtrar_clientes)
-        self.lista_clientes.Bind(wx.EVT_LISTBOX, self.seleccionar_cliente)
+        #self.lista_clientes.Bind(wx.EVT_LISTBOX, self.seleccionar_cliente)
         self.txt_cliente.Bind(wx.EVT_KEY_DOWN, self.on_key_cliente)  # Detectar Enter y navegación
         
         self.cargar_clientes()
@@ -245,25 +253,23 @@ class AgregarVentaDialog(wx.Dialog):
         self.lista_clientes.Clear()
         for id_cliente, datos in self.clientes_dict.items():
             self.lista_clientes.Append(f"{datos['nombre']} ({datos['telefono']})")
-    
-    def filtrar_clientes(self, event):
-        """Filtra los clientes según el texto ingresado y mantiene la navegación."""
-        filtro = self.txt_cliente.GetValue().lower()
-        seleccion_anterior = self.lista_clientes.GetSelection()  # Guardar selección previa
-        self.lista_clientes.Clear()
 
-        for id_cliente, datos in self.clientes_dict.items():
-            if filtro in datos['nombre'].lower():
-                self.lista_clientes.Append(f"{datos['nombre']} ({datos['telefono']})")
+
+    def filtrar_clientes(self, event):
+        print("filtro")
+        filtro = self.txt_cliente.GetValue()
+        self.lista_clientes.Clear()
+        clientes_filtrados = gestion_cliente.obtener_clientes_filtrados(filtro)
+
+        for id_cliente, datos in clientes_filtrados.items():
+            self.lista_clientes.Append(f"{datos['nombre']} ({datos['telefono']})")
 
         if self.lista_clientes.GetCount() > 0:
-            if seleccion_anterior == wx.NOT_FOUND:
-                self.lista_clientes.SetSelection(0)  # Solo si antes no había selección
-            self.lista_clientes.SetFocus()  # Mantiene la navegación con teclas
-            # 🔥 Aquí forzamos la lectura de la selección en lectores de pantalla
+            self.lista_clientes.SetFocus()
             seleccion = self.lista_clientes.GetStringSelection()
             if seleccion:
                 wx.CallAfter(self.lista_clientes.SetLabel, seleccion)
+    
 
     
     def seleccionar_cliente(self, event=None):
@@ -291,8 +297,8 @@ class AgregarVentaDialog(wx.Dialog):
     def cargar_productos(self):
         self.list_productos.Clear()
         productos = gestion_producto.obtener_productos()  
-        print("Tipo de 'productos':", type(productos))  
-        print("Contenido de 'productos':", productos)  # Imprime el contenido completo
+        #print("Tipo de 'productos':", type(productos))  
+        #print("Contenido de 'productos':", productos)  # Imprime el contenido completo
         productos_dict = {}  # Se crea un diccionario vacío.
         
         if productos:
@@ -331,11 +337,28 @@ class AgregarVentaDialog(wx.Dialog):
                     continue
 
 
-    def filtrar_productos(self, event):
+    def filtrar_productos_noanda(self, event):
         filtro = self.txt_buscar_producto.GetValue()
         self.actualizar_lista_productos(filtro)
 
-#permite agregar un solo producto a la lista 
+    def filtrar_productos(self, event):
+        filtro = self.txt_buscar_producto.GetValue()
+        self.list_productos.Clear()
+        productos_filtrados = gestion_producto.obtener_productos_filtrados(filtro) # Esta función no existe, tendrías que crearla
+
+        if productos_filtrados:
+            for id_producto, producto in productos_filtrados.items():
+                try:
+                    self.list_productos.Append((
+                        str(producto['nombre']),
+                        str(id_producto),
+                        str(producto['stock']),
+                        str(producto['precio'])
+                    ))
+                except KeyError as e:
+                    print(f"Error al procesar producto {id_producto}: {e}")
+                    print(f"Datos del producto: {producto}")
+                    continue
     
     def eliminar_producto(self, event):
         seleccion = self.list_productos_seleccionados.GetSelection()
@@ -413,15 +436,34 @@ class AgregarVentaDialog(wx.Dialog):
             self.list_productos_seleccionados.Clear()
             for producto in self.productos_seleccionados:
                 self.list_productos_seleccionados.Append(f"{producto['descripcion']} - Cantidad: {producto['cantidad']}")
+
+
+    def GetFechaVenta(self):
+        """Devuelve la fecha de venta seleccionada como un objeto datetime.date."""
+        wx_datetime = self.date_picker_venta.GetValue()  # Obtiene el objeto wx.DateTime
+        year = wx_datetime.GetYear()  # Obtiene el año
+        month = wx_datetime.GetMonth() + 1  # Los meses en wxPython son 0-based, así que sumamos 1
+        day = wx_datetime.GetDay()  # Obtiene el día
+        
+        # Crea un objeto datetime.date de Python
+        return datetime.date(year, month, day)
     def guardar_venta(self, event):
         """
         Guarda la venta en la base de datos.
         """
-        # 1. Obtener la fecha actual.
-        fecha_actual = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # 1. Obtener la fecha 
+        fecha_venta_date = self.GetFechaVenta()
+
+        # Formatear la fecha como una cadena (opcional, según cómo quieras guardarla)
+        #fecha_venta_formateada = fecha_venta_date.strftime('%Y-%m-%d') # Ejemplo: AAAA-MM-DD
+        # Otro formato común:
+        fecha_venta_formateada = fecha_venta_date.strftime('%d/%m/%Y') # Ejemplo: DD/MM/AAAA
+
+        print(f"Fecha de venta (date): {fecha_venta_date}")
 
         # 2. Obtener el ID del cliente (ejemplo: desde un campo de texto).
         cliente_str = self.txt_cliente.GetValue()
+        print(cliente_str)
         id_cliente=gestion_cliente.buscar_cliente_nombre(cliente_str)
         #print(f"id del cliente obtenido:{id_cliente}")
 
@@ -435,9 +477,9 @@ class AgregarVentaDialog(wx.Dialog):
 
         # 4. Obtener los productos vendidos (desde self.productos_seleccionados).
         productos_vendidos = self.productos_seleccionados
-        
+        #print(f"{fecha_venta_formateada} { id_cliente}")
         # 5. Llamar al método registrar_venta de GestionVentas.
-        if self.gestion_ventas.registrar_venta(fecha_actual, id_cliente, productos_vendidos, total_venta):
+        if self.gestion_ventas.registrar_venta(fecha_venta_formateada, id_cliente, productos_vendidos, total_venta):
             wx.MessageBox("Venta guardada correctamente.", "Éxito", wx.OK | wx.ICON_INFORMATION)
             # Limpiar la lista de productos seleccionados y actualizar la interfaz.
             self.productos_seleccionados = []

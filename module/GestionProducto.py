@@ -217,11 +217,19 @@ class GestionProducto:
 
 
 
+
     def obtener_productos_filtrados(self, filtro):
-        filtro = f"%{filtro.lower()}%"  # Agregamos comodines para la búsqueda "contiene" y convertimos a minúsculas
-        self.cursor.execute("SELECT id, nombre, stock,precio  FROM productos WHERE LOWER(nombre) LIKE ?", (filtro,))
-        resultados = self.cursor.fetchall()
-        productos_filtrados = {str(row[0]): {"nombre": row[1], "stock": row[2],"precio": row[3]} for row in resultados}
-        return productos_filtrados
-    
-    
+        """Busca productos por nombre o ID."""
+        try:
+            self.cursor.execute("""
+                SELECT id, nombre, stock, precio
+                FROM productos
+                WHERE LOWER(nombre) LIKE ? OR CAST(id AS TEXT) LIKE ?
+            """, (f"%{filtro.lower()}%", f"%{filtro}%"))
+            resultados = {}
+            for id_producto, nombre, stock, precio in self.cursor.fetchall():
+                resultados[id_producto] = {"nombre": nombre, "stock": stock, "precio": precio}
+            return resultados
+        except sqlite3.Error as e:
+            logging.error(f"Error al buscar productos: {e}")
+            return {}

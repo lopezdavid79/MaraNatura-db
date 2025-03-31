@@ -14,7 +14,7 @@ gestion_producto=GestionProducto()
 class Venta:
     def __init__(self, id, fecha, id_cliente, productos, total):
         self.id = id
-        self.fecha = fecha or datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        self.fecha = fecha 
         self.id_cliente = id_cliente
         self.productos = productos
         self.total = total
