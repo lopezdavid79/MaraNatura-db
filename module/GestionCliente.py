@@ -145,3 +145,13 @@ class GestionCliente:
             return None
 
     
+
+
+    def obtener_clientes_filtrados(self, filtro):
+        filtro = f"%{filtro.lower()}%"  # Agregamos comodines para la búsqueda "contiene" y convertimos a minúsculas
+        self.cursor.execute("SELECT id, nombre, telefono FROM clientes WHERE LOWER(nombre) LIKE ?", (filtro,))
+        resultados = self.cursor.fetchall()
+        clientes_filtrados = {str(row[0]): {"nombre": row[1], "telefono": row[2]} for row in resultados}
+        return clientes_filtrados
+    
+    

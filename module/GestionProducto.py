@@ -214,3 +214,14 @@ class GestionProducto:
         except Exception as e:
             logging.error(f"Error inesperado al actualizar el stock del producto {id_producto}: {e}")
             return False
+
+
+
+    def obtener_productos_filtrados(self, filtro):
+        filtro = f"%{filtro.lower()}%"  # Agregamos comodines para la búsqueda "contiene" y convertimos a minúsculas
+        self.cursor.execute("SELECT id, nombre, stock,precio  FROM productos WHERE LOWER(nombre) LIKE ?", (filtro,))
+        resultados = self.cursor.fetchall()
+        productos_filtrados = {str(row[0]): {"nombre": row[1], "stock": row[2],"precio": row[3]} for row in resultados}
+        return productos_filtrados
+    
+    

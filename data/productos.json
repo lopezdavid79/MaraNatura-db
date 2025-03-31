@@ -1,0 +1,709 @@
+{
+    "139959": {
+        "id": 139959,
+        "nombre": "Jabón líquido Homem essence",
+        "detalle": "no reseca la piel",
+        "stock": 2,
+        "precio": 6500.0
+    },
+    "1897": {
+        "id": 1897,
+        "nombre": "Beijo de Humor Femenino ",
+        "detalle": "Frutal moderado",
+        "stock": 2,
+        "precio": 49050.0
+    },
+    "96295": {
+        "id": 96295,
+        "nombre": "dose de humor ",
+        "detalle": "Frutal",
+        "stock": 1,
+        "precio": 49050.0
+    },
+    "27386": {
+        "id": 27386,
+        "nombre": "Tóin óin óin Shampoo Cabellos Rizados",
+        "detalle": "¡Limpia y da suavidad a tus rizos! ",
+        "stock": 4,
+        "precio": 5999.0
+    },
+    "156229": {
+        "id": 156229,
+        "nombre": "Kaiak sonar eau de toilette femenino ",
+        "detalle": "Transforma en fragancia los sonidos del mar",
+        "stock": 2,
+        "precio": 51120.0
+    },
+    "156226": {
+        "id": 156226,
+        "nombre": "Kaiak sonar eau de toilette masculino ",
+        "detalle": "Transforma los sonidos del mar en fragancia",
+        "stock": 2,
+        "precio": 51120.0
+    },
+    "69653": {
+        "id": 69653,
+        "nombre": "Desodorante roll on Kaiak masculino clásico ",
+        "detalle": "Frescura todo el día",
+        "stock": 6,
+        "precio": 5000.0
+    },
+    "69655": {
+        "id": 69655,
+        "nombre": "Desodorante roll on Kaiak masculino aventura ",
+        "detalle": "Frescura y perfume para tus días",
+        "stock": 2,
+        "precio": 5500.0
+    },
+    "69651": {
+        "id": 69651,
+        "nombre": "Desodorante roll on Kaiak masculino urbe ",
+        "detalle": "Frescura perfumada para tus días",
+        "stock": 1,
+        "precio": 5000.0
+    },
+    "69654": {
+        "id": 69654,
+        "nombre": "Desodorante roll on Kaiak femenino clásico ",
+        "detalle": "Frescura perfumada para tus días",
+        "stock": 4,
+        "precio": 5000.0
+    },
+    "26441": {
+        "id": 26441,
+        "nombre": "Jabón cremoso para manos Erva Doce ",
+        "detalle": "Manos suaves y perfumadas",
+        "stock": 1,
+        "precio": 11340.0
+    },
+    "32542": {
+        "id": 32542,
+        "nombre": "Mistureba jabones en barra ",
+        "detalle": "Cuida la piel de los más pequeños",
+        "stock": 2,
+        "precio": 8900.0
+    },
+    "78937": {
+        "id": 78937,
+        "nombre": "Jabones en barra cremosos y refrescantes Homem ",
+        "detalle": "Cuidado del hombre",
+        "stock": 0,
+        "precio": 11170.0
+    },
+    "147402": {
+        "id": 147402,
+        "nombre": "Repuesto Acondicionador protector cabellos con daños leves Lumina",
+        "detalle": "Hidratación dirigida a las puntas. 2x más protección contra radicales libres. Hecho en Brasil. ",
+        "stock": 0,
+        "precio": 6999.0
+    },
+    "20834": {
+        "id": 20834,
+        "nombre": "Humor Liberta",
+        "detalle": "Celebra la libertad y el espíritu Libre.",
+        "stock": 2,
+        "precio": 49050.0
+    },
+    "122948": {
+        "id": 122948,
+        "nombre": "Humor Transforma ",
+        "detalle": "Para ti que quieres transformar el mundo ",
+        "stock": 1,
+        "precio": 49050.0
+    },
+    "111179": {
+        "id": 111179,
+        "nombre": "Kaiak Océano Eau de Toilette Femenino",
+        "detalle": "Floral Frutal. Algas marinas, Pataqueira, Frutal Acuoso. Vidrio reciclado: evitamos el descarte ",
+        "stock": 1,
+        "precio": 51120.0
+    },
+    "129614": {
+        "id": 129614,
+        "nombre": "Kaiak O2 eau de toilette femenino",
+        "detalle": "Kaiak O2: Sentí el poder de la frescura que oxigena. Potentes moléculas acuáticas, cítricas y un toque de maderas húmedas con la frescura del poleo, ingrediente de la biodiversidad brasileña. ",
+        "stock": 1,
+        "precio": 51120.0
+    },
+    "74792": {
+        "id": 74792,
+        "nombre": "Biografía Assinatura Masculino",
+        "detalle": "La biografía más importante es la que sólo puedes escribir, es tu historia",
+        "stock": 1,
+        "precio": 54980.0
+    },
+    "83324": {
+        "id": 83324,
+        "nombre": "Kriska Drama",
+        "detalle": "Sorprendente y auténtica. Arte y emoción en un acorde de nueces carameladas, azúcar derretido, maní y avellanas tostadas. Una fragancia intensa que une el dulce con la cremosidad de las habas de vainilla y notas amaderadas, para sus mejores momentos y más femeninos.",
+        "stock": 0,
+        "precio": 41120.0
+    },
+    "42064": {
+        "id": 42064,
+        "nombre": "Kriska Clásico",
+        "detalle": "Vibrante y atemporal. La dulzura de las notas de vainilla se mezcla con una combinación marcada de maderas. Una fragancia para sus momentos más alegres y femeninos.",
+        "stock": 1,
+        "precio": 41120.0
+    },
+    "115757": {
+        "id": 115757,
+        "nombre": "Urbano Recria",
+        "detalle": "Perfume con una frescura moderna e ingrediente único en la perfumería mundial. Polygonum (único aldheido natural que existe en la paleta del perfumista",
+        "stock": 1,
+        "precio": 42950.0
+    },
+    "111172": {
+        "id": 111172,
+        "nombre": "Kaiak urbe Masculino",
+        "detalle": "El inusual contraste entre la frescura acuatica y la calidez de la copaiba, un ingrediente de la biodiversidad brasileña. ",
+        "stock": 0,
+        "precio": 51120.0
+    },
+    "18237": {
+        "id": 18237,
+        "nombre": "Body splash frambuesa y pimienta roja Tododia",
+        "detalle": "Con una fragancia cautivadora que combina la frescura de la frambuesa y la pimienta rosa, creando una experiencia olfativa única y envolvente. Hecho en Argentina. Vegano.",
+        "stock": 2,
+        "precio": 24800.0
+    },
+    "117800": {
+        "id": 117800,
+        "nombre": "Body splash acerola e hibisco Tododia",
+        "detalle": "El body splash acerola e hibisco Tododia es una invitación a vestir tu cuerpo con un ligero perfume. Tododia busca inspiración en la combinación de notas sorprendentes, traducidas en fragancias irresistibles. Sensaciones de frescor y ligereza, que añaden el toque final al cuidado de cada día. Hecho en Brasil. Vegano.",
+        "stock": 2,
+        "precio": 24080.0
+    },
+    "72198": {
+        "id": 72198,
+        "nombre": "Body Splash Hojas de Limón y Guanábana tododia",
+        "detalle": "El Body Splash de Tododia es una invitación a vestir el cuerpo con",
+        "stock": 1,
+        "precio": 24080.0
+    },
+    "72196": {
+        "id": 72196,
+        "nombre": "Body Splash Flor de Lis Tododia",
+        "detalle": "El body splash de Tododia es una invitación a vestir el cuerpo",
+        "stock": 2,
+        "precio": 24080.0
+    },
+    "76383": {
+        "id": 76383,
+        "nombre": "Body Splash Frambuesa y Pimienta Rosa Tododia",
+        "detalle": "El Body Splash de Tododia es una invitación a vestir el cuerpo",
+        "stock": 2,
+        "precio": 24080.0
+    },
+    "72197": {
+        "id": 72197,
+        "nombre": "Body Splash Frutas Rojas Tododia",
+        "detalle": "El Body Splash de Tododia es una invitación a vestir el",
+        "stock": 3,
+        "precio": 24080.0
+    },
+    "132681": {
+        "id": 132681,
+        "nombre": "Frescor eau de toilette femenino maracuyá naturaleza de los sueños Ekos",
+        "detalle": "Cítrico floral. Maracuyá nocturno, Bergamota, Mandarina, Hierba limón. Vegano. Hecho en Brasil",
+        "stock": 2,
+        "precio": 29900.0
+    },
+    "104897": {
+        "id": 104897,
+        "nombre": "Frescor eau de toilette buriti Ekos",
+        "detalle": "La potencia biocosmética de la línea Natura Ekos para vos y para la Amazonía, con bioactivos amazónicos transformados en tratamientos de alta performance para el cuerpo. Hecho en Brasil. ",
+        "stock": 2,
+        "precio": 22900.0
+    },
+    "73575": {
+        "id": 73575,
+        "nombre": "Frescor Pitanga Preta Eau De Toilette Ekos",
+        "detalle": "Notas de pitanga negra conviven con flores de colores",
+        "stock": 3,
+        "precio": 29900.0
+    },
+    "111176": {
+        "id": 111176,
+        "nombre": "Kaiak Clásico Femenino",
+        "detalle": "Sentí el poder de la frescura.",
+        "stock": 2,
+        "precio": 51120.0
+    },
+    "111177": {
+        "id": 111177,
+        "nombre": "Kaiak Aventura Femenino",
+        "detalle": "Sentí la fuerza del mar",
+        "stock": 1,
+        "precio": 51120.0
+    },
+    "111171": {
+        "id": 111171,
+        "nombre": "Kaiak Clásico Masculino",
+        "detalle": "Sentí el poder de la frescura.",
+        "stock": 1,
+        "precio": 51120.0
+    },
+    "131492": {
+        "id": 131492,
+        "nombre": "Humor conexión masculino ",
+        "detalle": "Una fragancia que recrea la emoción de sintonizar con el otro, armonizada con el feat inesperado del coco, la piña y un mix de especias.",
+        "stock": 1,
+        "precio": 49050.0
+    },
+    "131491": {
+        "id": 131491,
+        "nombre": "Humor festival femenino ",
+        "detalle": "Una fragancia que pulsa en la frecuencia de la alegría colectiva, armonizada con las notas electrizantes de la manzana verde y la piña.",
+        "stock": 1,
+        "precio": 49050.0
+    },
+    "64750": {
+        "id": 64750,
+        "nombre": "Paz e Humor Masculino",
+        "detalle": "La fragancia Paz e Humor eau de toilette ofrece la frescura perfecta para épocas de calor. Al caracterizarse por sus aromas ligeros podés usar la cantidad que quieras sin miedo a excederte. Hecho en Argentina o Brasil. Vegano.",
+        "stock": 2,
+        "precio": 49050.0
+    },
+    "115758": {
+        "id": 115758,
+        "nombre": "Urbano Nox",
+        "detalle": "Perfume moderno e irreverente caracterizado por una frescura sorprendente de notas marina vibrantes y aromáticas, acentuados por especiarias marcantes, maderas sensuales y notas calientes ambaradas, con un sutil toque de cuero. Trae modernidad e irreverencia",
+        "stock": 1,
+        "precio": 42950.0
+    },
+    "64746": {
+        "id": 64746,
+        "nombre": "Humor Meu Primeiro",
+        "detalle": "Una invitación a romper con la seriedad del día a día de forma osada y divertida",
+        "stock": 2,
+        "precio": 49050.0
+    },
+    "64749": {
+        "id": 64749,
+        "nombre": "Humor Propio Femenino",
+        "detalle": "Ocasiones especiales Enriquecido con ingredientes naturales brasileños",
+        "stock": 2,
+        "precio": 49050.0
+    },
+    "116469": {
+        "id": 116469,
+        "nombre": "Humor galáxia eau de toilette femenino",
+        "detalle": "El alineamiento de los astros en el cielo lo revela: llegó una nueva línea de Humor. El match perfecto entre perfumería y astrología: Humor Galaxia. Viene con la energía que se necesita para el día a día, sin perder el brillo. Una fragancia irreverente e intrigante para acompañarte día a día. ",
+        "stock": 1,
+        "precio": 49050.0
+    },
+    "2788": {
+        "id": 2788,
+        "nombre": "Crema nutritiva dátiles y canela Tododia",
+        "detalle": "Tecnología inteligente, piel profundamente nutrida. Acelera la renovación celular. Piel saludable e iluminada. Hecho en Brasil ",
+        "stock": 2,
+        "precio": 14950.0
+    },
+    "104902": {
+        "id": 104902,
+        "nombre": "Hidratante corporal buriti Ekos",
+        "detalle": "Recupera la piel por efecto del sol, previene el fotoenvejecimiento y evita la resequedad. La potencia biocosmética de la línea Natura Ekos para vos y para la Amazonía, con bioactivos amazónicos transformados en tratamientos de alta performance para el cuerpo. Hecho en Argentina. ",
+        "stock": 1,
+        "precio": 19950.0
+    },
+    "80912": {
+        "id": 80912,
+        "nombre": "Hidratante Corporal Ucuuba",
+        "detalle": "Tonificación inmediata. Estimula la producción natural de colágeno y elastina en 3 días. Aumenta la elasticidad y firmeza natural. Origen: Brasil",
+        "stock": 2,
+        "precio": 19950.0
+    },
+    "82509": {
+        "id": 82509,
+        "nombre": "Ekos Hidratante corporal Maracuya ",
+        "detalle": "Con acción antiestrés cutáneo es potente en calmar y reequilibrar la piel a medida que combate los indicadores del estrés cutáneo, aumentando los niveles naturales de hidratación",
+        "stock": 2,
+        "precio": 19950.0
+    },
+    "176802": {
+        "id": 176802,
+        "nombre": "kit flor de pera y melissa",
+        "detalle": "Crema corporal más dos jabones",
+        "stock": 4,
+        "precio": 12300.0
+    },
+    "176788": {
+        "id": 176788,
+        "nombre": "humor meu primeiro bs",
+        "detalle": "Mi primer humor más jabón en forma de corazón",
+        "stock": 1,
+        "precio": 23000.0
+    },
+    "178308": {
+        "id": 178308,
+        "nombre": "Jabón Líquido homem clásico",
+        "detalle": "Piel hidratada y perfumada por más tiempo.",
+        "stock": 3,
+        "precio": 7500.0
+    },
+    "125265": {
+        "id": 125265,
+        "nombre": "Crema nutritiva ciruela y flor de cerezo 400 ml Tododia",
+        "detalle": "Hermosa crema",
+        "stock": 2,
+        "precio": 14950.0
+    },
+    "123053": {
+        "id": 123053,
+        "nombre": "Tododia hidratante carambola y mandarina 200 ml",
+        "detalle": "Piel más suave y fresca",
+        "stock": 1,
+        "precio": 9850.0
+    },
+    "122140": {
+        "id": 122140,
+        "nombre": "Jabón líquido Kriska Drama",
+        "detalle": "aroma a algodón de azucar",
+        "stock": 4,
+        "precio": 5300.0
+    },
+    "73343": {
+        "id": 73343,
+        "nombre": "Repuesto Ekos acondicionador",
+        "detalle": "Cabello sano e hidratado",
+        "stock": 2,
+        "precio": 8000.0
+    },
+    "73191": {
+        "id": 73191,
+        "nombre": "Repuesto shampoo ekos",
+        "detalle": "Cabello sano e hidratado",
+        "stock": 2,
+        "precio": 8000.0
+    },
+    "134597": {
+        "id": 134597,
+        "nombre": "Crema nutritiva granada y flor de mora tododia",
+        "detalle": "Hidrata hasta las capas más profundas de tu piel",
+        "stock": 1,
+        "precio": 14950.0
+    },
+    "176759": {
+        "id": 176759,
+        "nombre": "Caja ekos navidad manos",
+        "detalle": "Manos hidratadas y perfumadas",
+        "stock": 1,
+        "precio": 25000.0
+    },
+    "176757": {
+        "id": 176757,
+        "nombre": "Jabones navidad",
+        "detalle": "Surtidos",
+        "stock": 2,
+        "precio": 9000.0
+    },
+    "176758": {
+        "id": 176758,
+        "nombre": "Kit prambueza y pimienta roja",
+        "detalle": "Jabón líquido más crema de manos",
+        "stock": 2,
+        "precio": 10500.0
+    },
+    "176768": {
+        "id": 176768,
+        "nombre": "Kit Ekos patagua miñatura",
+        "detalle": "Shampoo y acondicionador 100 ml",
+        "stock": 1,
+        "precio": 9500.0
+    },
+    "179215": {
+        "id": 179215,
+        "nombre": "Riñonera creer para ver",
+        "detalle": "amplia color verde militar",
+        "stock": 1,
+        "precio": 29000.0
+    },
+    "64748": {
+        "id": 64748,
+        "nombre": "Humor a dois masculino",
+        "detalle": "La vida es más linda de a dos",
+        "stock": 1,
+        "precio": 49050.0
+    },
+    "148413": {
+        "id": 148413,
+        "nombre": "Repuesto acondicionador Lumina cabello risado",
+        "detalle": "300 ml",
+        "stock": 1,
+        "precio": 7000.0
+    },
+    "114275": {
+        "id": 114275,
+        "nombre": "Esencial óleo ",
+        "detalle": "Piel hidratada al salir de la ducha",
+        "stock": 2,
+        "precio": 14999.0
+    },
+    "112029": {
+        "id": 112029,
+        "nombre": "Shampoo lumina cabello risado",
+        "detalle": "Cabello suave y definición",
+        "stock": 1,
+        "precio": 9999.0
+    },
+    "29933": {
+        "id": 29933,
+        "nombre": "Naturé jabones en barra",
+        "detalle": "Los más pequeños de la casa, felices y con su piel radiante",
+        "stock": 1,
+        "precio": 9500.0
+    },
+    "125365": {
+        "id": 125365,
+        "nombre": "Shampoo homem elo",
+        "detalle": "Cabello y barba",
+        "stock": 2,
+        "precio": 8999.0
+    },
+    "182956": {
+        "id": 182956,
+        "nombre": "Kit acerola e ivisco completo",
+        "detalle": "Caja de jabones, desodorante roll-on, body splash y crema corporal de 400 ml",
+        "stock": 2,
+        "precio": 39999.0
+    },
+    "105407": {
+        "id": 105407,
+        "nombre": "Desodorante ervadoce",
+        "detalle": "El desodorante sin género más vendido de natura",
+        "stock": 8,
+        "precio": 4500.0
+    },
+    "181949": {
+        "id": 181949,
+        "nombre": "Jabones enamorados feliz día",
+        "detalle": "hermosa caja de jabones surtidos",
+        "stock": 2,
+        "precio": 9990.0
+    },
+    "5877": {
+        "id": 5877,
+        "nombre": "Repuesto jabón líquido frutas rojas",
+        "detalle": "Manos suabes y perfumadas",
+        "stock": 4,
+        "precio": 5999.0
+    },
+    "27387": {
+        "id": 27387,
+        "nombre": "Shampoo Splack naturé",
+        "detalle": "cabello liso",
+        "stock": 1,
+        "precio": 5999.0
+    },
+    "27385": {
+        "id": 27385,
+        "nombre": "Acondicionador Splack naturé ",
+        "detalle": "Cabello liso",
+        "stock": 1,
+        "precio": 5999.0
+    },
+    "86337": {
+        "id": 86337,
+        "nombre": "Repuesto jabón líquido abellana y casis",
+        "detalle": "Manos suaves y perfumadas",
+        "stock": 1,
+        "precio": 5999.0
+    },
+    "5871": {
+        "id": 5871,
+        "nombre": "Repuesto jabón líquido frambueza y pimienta rosa",
+        "detalle": "Manos suaves y perfumadas",
+        "stock": 1,
+        "precio": 5999.0
+    },
+    "146571": {
+        "id": 146571,
+        "nombre": "vandolera creeer para ver",
+        "detalle": "color verde",
+        "stock": 1,
+        "precio": 29000.0
+    },
+    "150079": {
+        "id": 150079,
+        "nombre": "Kit de cuadernos creer para ver",
+        "detalle": "Hermosos cuuadernos uno liso y otro rallado",
+        "stock": 2,
+        "precio": 10400.0
+    },
+    "2827": {
+        "id": 2827,
+        "nombre": "Repuesto crema hidratante Flor de lis 400 Ml",
+        "detalle": "Hidrata y nutre hasta las capas más profundas de la piel.",
+        "stock": 6,
+        "precio": 11300.0
+    },
+    "203054": {
+        "id": 203054,
+        "nombre": "óleo ceve",
+        "detalle": "Almendras dulces",
+        "stock": 1,
+        "precio": 25000.0
+    },
+    "129913": {
+        "id": 129913,
+        "nombre": "Desodorante roll-on mora roja y jabuticava",
+        "detalle": "No mancha la ropa",
+        "stock": 2,
+        "precio": 5000.0
+    },
+    "174158": {
+        "id": 174158,
+        "nombre": "Cartuchera de creer para ver",
+        "detalle": "empeza las clases con estilo",
+        "stock": 0,
+        "precio": 10900.0
+    },
+    "174157": {
+        "id": 174157,
+        "nombre": "Kit lápiz y virome creer para ver",
+        "detalle": "Comenzá las clases con estilo",
+        "stock": 1,
+        "precio": 9500.0
+    },
+    "22693": {
+        "id": 22693,
+        "nombre": "Shampoo Urbano Recria",
+        "detalle": "Al mover el cuerpo, el hombre manifiesta emociones y despierta los sentidos. Este champú para cabello, barba y cuerpo limpia y deja las hebras con el delicioso aroma de Urbano Recria",
+        "stock": 2,
+        "precio": 8999.0
+    },
+    "87512": {
+        "id": 87512,
+        "nombre": "Jabones En Barra Puro Vegetal Mora Roja y Jabuticaba Tododía",
+        "detalle": "Limpieza purificante y textura cremosa",
+        "stock": 1,
+        "precio": 9800.0
+    },
+    "2834": {
+        "id": 2834,
+        "nombre": "Jabones En Barra Puro Vegetal Frutas Rojas Tododía",
+        "detalle": "Limpieza purificante y textura cremosa",
+        "stock": 2,
+        "precio": 9800.0
+    },
+    "2828": {
+        "id": 2828,
+        "nombre": "Jabones En Barra Puro Vegetal Flor De Lis Tododía",
+        "detalle": "Limpieza suave que no reseca la piel",
+        "stock": 1,
+        "precio": 9800.0
+    },
+    "121962": {
+        "id": 121962,
+        "nombre": "Crema hidratante nocturna té de manzanilla y lavanda Tododia",
+        "detalle": "Recupera tu piel mientras dormís. Acelera renovación celular. Fragancia relajante. Hecho en Brasil. ",
+        "stock": 1,
+        "precio": 14950.0
+    },
+    "18256": {
+        "id": 18256,
+        "nombre": "crema nutritiva algodón Tododia",
+        "detalle": "Nutrición para tu piel",
+        "stock": 1,
+        "precio": 14950.0
+    },
+    "182950": {
+        "id": 182950,
+        "nombre": "Kit Ekos ucuuba",
+        "detalle": "manos y cuerpo",
+        "stock": 1,
+        "precio": 22000.0
+    },
+    "99183": {
+        "id": 99183,
+        "nombre": "Crema nutritiva cereza y avellana tododia",
+        "detalle": "Hidrata hasta las capas más profundas de tu piel",
+        "stock": 4,
+        "precio": 14950.0
+    },
+    "181962": {
+        "id": 181962,
+        "nombre": "kit ekos asaí",
+        "detalle": "Jabones en barra, crema para manos y crema corporal",
+        "stock": 2,
+        "precio": 27000.0
+    },
+    "147434": {
+        "id": 147434,
+        "nombre": "SPRAY LISOS Lumina",
+        "detalle": "Cabello suave y protejido",
+        "stock": 1,
+        "precio": 14900.0
+    },
+    "181955": {
+        "id": 181955,
+        "nombre": "FACES desmaquillante enamorados",
+        "detalle": "Cuidado de la piel al desmaquillar",
+        "stock": 1,
+        "precio": 13900.0
+    },
+    "23151": {
+        "id": 23151,
+        "nombre": "Tododia frambueza y pimienta rosa 200 ml",
+        "detalle": "Crema hidratante",
+        "stock": 1,
+        "precio": 9800.0
+    },
+    "199755": {
+        "id": 199755,
+        "nombre": "Manos frutas rojas",
+        "detalle": "Manos lindas y protejidas",
+        "stock": 3,
+        "precio": 5000.0
+    },
+    "23218": {
+        "id": 23218,
+        "nombre": "Crema cereza y avellana 200 ml",
+        "detalle": "Crema nutritiva",
+        "stock": 1,
+        "precio": 9800.0
+    },
+    "180618": {
+        "id": 180618,
+        "nombre": "águas de natura",
+        "detalle": "cítricos, violetas",
+        "stock": 3,
+        "precio": 26500.0
+    },
+    "199819": {
+        "id": 199819,
+        "nombre": "Kit Ekos maracuyá",
+        "detalle": "Jabón exfoliante, nectar para manos y corporal",
+        "stock": 1,
+        "precio": 28000.0
+    },
+    "186883": {
+        "id": 186883,
+        "nombre": "Kriska Shock",
+        "detalle": "Bainilla",
+        "stock": 1,
+        "precio": 41000.0
+    },
+    "95808": {
+        "id": 95808,
+        "nombre": "águas de violetas",
+        "detalle": "La delicadeza de la violeta se une a una combinación de notas amaderadas, envuelta por el musk y un toque de pataqueira, ingrediente de la biodiversidad brasileña. Fragancia Floral Leve Violeta Gardenia Sándalo Contenido 150 ML",
+        "stock": 1,
+        "precio": 27390.0
+    },
+    "95809": {
+        "id": 95809,
+        "nombre": "Aguas Colonia Cítrico",
+        "detalle": "La frescura de las notas cítricas en una combinación de limón siciliano y lima dulce, envueltas en un bouquet floral y un toque de capim limão, ingrediente de la naturaleza brasileña.",
+        "stock": 1,
+        "precio": 27390.0
+    },
+    "132967": {
+        "id": 132967,
+        "nombre": "Humor da minha vida eau de toilette femenino 75 ml",
+        "detalle": "Una fragancia que conecta, recarga, divierte y provoca. Con una combinación de manzana caramelizada y crujiente con pizcas burbujeantes de cítricos y especias frías se unen a un fondo sensual de ámbar y vainilla. Irreverente, enriquecida con los ingredientes naturales inéditos brasileños. Para disfrutar de la vida y salir a contagiar tu humo. Frutal floral Manzana caramelizada, Bergamota, Pimienta rosa. Moderado. Hecho en Argentina. Vegano.",
+        "stock": 2,
+        "precio": 50520.0
+    }
+}
