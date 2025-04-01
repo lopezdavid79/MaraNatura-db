@@ -267,8 +267,8 @@ class AgregarVentaDialog(wx.Dialog):
         if self.lista_clientes.GetCount() > 0:
             self.lista_clientes.SetFocus()
             seleccion = self.lista_clientes.GetStringSelection()
-            if seleccion:
-                wx.CallAfter(self.lista_clientes.SetLabel, seleccion)
+            #if seleccion:
+                #wx.CallAfter(self.lista_clientes.SetLabel, seleccion)
     
 
     
@@ -370,7 +370,7 @@ class AgregarVentaDialog(wx.Dialog):
 
     def navegar_productos(self, event):
         keycode = event.GetKeyCode()
-        if keycode == wx.WXK_RETURN:
+        if keycode == wx.WXK_RETURN or keycode == ord('a'):
             self.agregar_producto(None)
         elif keycode == wx.WXK_DELETE:
             self.eliminar_producto(None)
@@ -478,20 +478,23 @@ class AgregarVentaDialog(wx.Dialog):
         # 4. Obtener los productos vendidos (desde self.productos_seleccionados).
         productos_vendidos = self.productos_seleccionados
         #print(f"{fecha_venta_formateada} { id_cliente}")
-        # 5. Llamar al método registrar_venta de GestionVentas.
-        if self.gestion_ventas.registrar_venta(fecha_venta_formateada, id_cliente, productos_vendidos, total_venta):
-            wx.MessageBox("Venta guardada correctamente.", "Éxito", wx.OK | wx.ICON_INFORMATION)
-            # Limpiar la lista de productos seleccionados y actualizar la interfaz.
-            self.productos_seleccionados = []
-            self.list_productos_seleccionados.Clear()
-            self.lbl_total.SetLabel("$0.00")
-            self.Layout()
+        if ConfirmacionVentaDialog.mostrar_confirmacion(self, cliente_str, productos_vendidos, total_venta):
+            # El usuario confirmó, procedemos a guardar la venta
+            if self.gestion_ventas.registrar_venta(fecha_venta_formateada, id_cliente, productos_vendidos, total_venta):
+                wx.MessageBox("Venta guardada correctamente.", "Éxito", wx.OK | wx.ICON_INFORMATION)
+                self.productos_seleccionados = []
+                self.list_productos_seleccionados.Clear()
+                self.lbl_total.SetLabel("$0.00")
+                self.txt_cliente.SetValue("") # Limpiar el campo cliente
+                self.Layout()
+            else:
+                wx.MessageBox("Error al guardar la venta.", "Error", wx.OK | wx.ICON_ERROR)
         else:
-            wx.MessageBox("Error al guardar la venta.", "Error", wx.OK | wx.ICON_ERROR)
+            # El usuario canceló la venta
+            wx.MessageBox("Venta cancelada.", "Información", wx.OK | wx.ICON_INFORMATION)
 
-        """
-        Actualiza la interfaz de usuario con el total de la venta.
-        """
+    
+
 
     def actualizar_total(self):
         total_venta = self.gestion_ventas.calcular_total_venta_desde_db(self.productos_seleccionados)
