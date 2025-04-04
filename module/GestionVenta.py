@@ -225,3 +225,33 @@ class GestionVenta:
         except sqlite3.Error as e:
             logging.error(f"Error al obtener ventas en rango: {e}")
             return pd.DataFrame()
+        
+        
+    def editar_venta(self, id_venta, fecha=None, id_cliente=None, total=None):
+        """Actualiza los datos de una venta existente."""
+        try:
+            updates = []
+            values = []
+            if fecha:
+                updates.append("fecha = ?")
+                values.append(fecha)
+            if id_cliente is not None:
+                updates.append("id_cliente = ?")
+                values.append(id_cliente)
+            if total is not None:
+                updates.append("total = ?")
+                values.append(total)
+
+            if updates:
+                query = f"UPDATE ventas SET {', '.join(updates)} WHERE id = ?"
+                values.append(id_venta)
+                self.cursor.execute(query, values)
+                self.conexion.commit()
+                logging.info(f"Venta {id_venta} actualizada.")
+                return True
+            else:
+                logging.warning("No se proporcionaron datos para actualizar la venta.")
+                return False
+        except sqlite3.Error as e:
+            logging.error(f"Error al editar venta: {e}")
+            return False

@@ -1,0 +1,1 @@
+pyinstaller --onedir --windowed --icon=MaraNatura.ico --add-data "Sounds;Sounds" --add-data "MaraNatura.db;." MaraNatura.py

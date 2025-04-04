@@ -204,7 +204,7 @@ class DetalleProductoDialog(wx.Dialog):
 
 class EditarProductoDialog(wx.Dialog):
     def __init__(self, parent, id_producto):
-        super().__init__(parent, title="Editar Producto", size=(300, 250))
+        super().__init__(parent, title="Editar producto", size=(300, 250))
         self.id_producto = id_producto
 
         panel = wx.Panel(self)
