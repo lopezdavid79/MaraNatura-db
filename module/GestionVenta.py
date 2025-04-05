@@ -204,29 +204,32 @@ class GestionVenta:
             return None
         
     def obtener_ventas_rango_pandas(self, fecha_inicio=None, fecha_fin=None):
-        """Obtiene las ventas dentro de un rango de fechas y las devuelve en un DataFrame de pandas."""
         try:
             query = """
                 SELECT v.fecha, c.id AS cliente_id, p.nombre AS producto,
-                       pv.cantidad, p.precio, (pv.cantidad * p.precio) AS total_venta
+                    pv.cantidad, p.precio, (pv.cantidad * p.precio) AS total_venta
                 FROM ventas v
                 JOIN clientes c ON v.id_cliente = c.id
                 JOIN productos_venta pv ON v.id = pv.id_venta
                 JOIN productos p ON pv.id_producto = p.id
             """
+
             params = ()
             if fecha_inicio and fecha_fin:
-                query += " WHERE DATE(v.fecha) BETWEEN ? AND ?"
+                query += """
+                    WHERE DATE(SUBSTR(v.fecha, 7, 4) || '-' || SUBSTR(v.fecha, 4, 2) || '-' || SUBSTR(v.fecha, 1, 2))
+                    BETWEEN ? AND ?
+                """
                 params = (fecha_inicio, fecha_fin)
+
             query += " ORDER BY v.fecha DESC"
 
             df = pd.read_sql_query(query, self.conexion, params=params)
             return df
-        except sqlite3.Error as e:
+        except Exception as e:
             logging.error(f"Error al obtener ventas en rango: {e}")
             return pd.DataFrame()
-        
-        
+    
     def editar_venta(self, id_venta, fecha=None, id_cliente=None, total=None):
         """Actualiza los datos de una venta existente."""
         try:

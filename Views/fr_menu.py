@@ -13,7 +13,7 @@ from module.ReproductorSonido  import ReproductorSonido
 class Principal(wx.Frame):
     def __init__(self, *args, **kwds):
         super().__init__(*args, **kwds)
-
+        self.report_frame = None
         # Crear la barra de menú
         menubar = wx.MenuBar()
 
@@ -115,21 +115,11 @@ class Principal(wx.Frame):
 
 
 
-    def on_list_sale(self, event):
-        """Abre el formulario de lista de ventas."""
-        ReproductorSonido.reproducir("screenCurtainOn.wav")
-        list_sale_form = ListSale(self, id=None, title="Lista de Ventas")
-        list_sale_form.Show()
-    
-
     def on_report_sale(self, event):
-        """Abre el formulario de reporte de ventas."""
         ReproductorSonido.reproducir("screenCurtainOn.wav")
-        report_sale_form =ReporteVentasFrame (self, title="reporte de Ventas")
-        report_sale_form.Show()
+        frame = ReporteVentasFrame(None, "Reporte de Ventas")
+        frame.Show()
 
-    
-    
     def on_exit(self, event):
         """Cierra la aplicación."""
         ReproductorSonido.reproducir("Salir.wav")

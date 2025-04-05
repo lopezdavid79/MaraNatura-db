@@ -280,10 +280,11 @@ class AgregarVentaDialog(wx.Dialog):
         self.lista_clientes = wx.ListBox(panel, style=wx.LB_SINGLE)
         vbox.Add(self.lista_clientes, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=10, proportion=1)
 
-        self.txt_cliente.Bind(wx.EVT_TEXT_ENTER, self.filtrar_clientes)
+        #self.txt_cliente.Bind(wx.EVT_TEXT_ENTER, self.filtrar_clientes)
         self.btn_filtrar_cliente.Bind(wx.EVT_BUTTON, self.filtrar_clientes)
-        #self.lista_clientes.Bind(wx.EVT_LISTBOX, self.seleccionar_cliente)
-        self.txt_cliente.Bind(wx.EVT_KEY_DOWN, self.on_key_cliente)  # Detectar Enter y navegación
+
+        self.txt_cliente.Bind(wx.EVT_KEY_DOWN, self.on_key_cliente)
+        self.lista_clientes.Bind(wx.EVT_KEY_DOWN, self.on_key_lista_enter) # Nueva vinculación
 
         self.cargar_clientes()
 # Buscar Producto
@@ -381,27 +382,35 @@ class AgregarVentaDialog(wx.Dialog):
     def seleccionar_cliente(self, event=None):
         seleccion = self.lista_clientes.GetStringSelection()
         if seleccion:
-            self.txt_cliente.SetValue(seleccion.split(' (')[0])  # Guarda solo el nombre
-            self.lista_clientes.Hide()  # Oculta la lista después de seleccionar
-            self.txt_cliente.SetFocus()  # Devuelve el foco al campo de texto
-            print(f"el foco :´{self.t}")
-            self.anunciar_seleccion()  # ¡Llamamos a anunciar_seleccion aquí!
-
-        """Permite seleccionar el cliente solo con Enter (deshabilita las flechas)."""
+            self.txt_cliente.SetValue(seleccion.split(' (')[0])
+            self.txt_cliente.SetFocus()
+            print("Intentando setear el foco en txt_cliente")
+            self.anunciar_seleccion()
+        
     def on_key_cliente(self, event):
         keycode = event.GetKeyCode()
-        print(f"Tecla presionada: {keycode}")  # Para depuración: muestra el código de la tecla
+        print(f"Tecla presionada en txt_cliente: {keycode}")
 
-        #if keycode == wx.WXK_RETURN:  # Si la tecla es Enter
-        if keycode == 307:  # Usar el código de tecla correcto para Enter en tu sistema
-            print("seleccionar cliente")
+        if keycode == wx.WXK_RETURN:
+            print("Enter presionado en txt_cliente")
             self.seleccionar_cliente()
-            self.txt_cliente.SetFocus()  # Devuelve el foco al campo de texto
-        elif keycode in [wx.WXK_UP, wx.WXK_DOWN, wx.WXK_LEFT, wx.WXK_RIGHT]:
-            pass  # Ignora las teclas de flecha
+            self.txt_cliente.SetFocus()
+        elif keycode in [wx.WXK_UP, wx.WXK_DOWN]: # Permitir navegación con flechas cuando la lista esté visible
+            event.Skip() # Permite que la lista reciba el evento de flecha si tiene el foco
         else:
-            event.Skip()  # Permite que otros eventos de teclado se procesen normalmente
-    
+            event.Skip()
+
+    def on_key_lista_enter(self, event):
+        keycode = event.GetKeyCode()
+        print(f"Tecla presionada en lista: {keycode}")
+        if keycode == wx.WXK_RETURN or  keycode == 307:
+            print("Enter presionado en la lista")
+            self.seleccionar_cliente() # Reutilizamos la misma función
+            self.txt_cliente.SetFocus()
+        else:
+            event.Skip()
+
+
     def anunciar_seleccion(self):
         """Fuerza la lectura de la selección en lectores de pantalla."""
         seleccion = self.lista_clientes.GetStringSelection()
